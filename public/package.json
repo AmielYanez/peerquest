@@ -5,6 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "backbone": "^1.2.3",
+    "browserify-handlebars": "^1.0.0",
+    "handlebars": "^4.0.5",
     "jquery": "^2.2.0",
     "underscore": "^1.8.3"
   },
