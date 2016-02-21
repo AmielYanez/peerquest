@@ -17,30 +17,58 @@ var view = new MatchView({el: $('#matchView')});
 },{"./view":5,"jquery":50}],3:[function(require,module,exports){
 
 var BB = require('backbone');
+var _ = require('underscore');
     
-var MatchView = BB.Model.extend({
-    algo: '-------'
+
+var MatchModel = BB.Model.extend({
+    url: '/match',
+    attributes: [
+        ['Carlos', 'url'],
+        ['David', 'url'],
+        ['Monica', 'url'],
+        ['Ana', 'url']
+    ],
+    random: function(){
+        var arr = [];
+        arr[this.attributes.length -1] = '';
+        
+        arr = _.map(arr, function(val, i){
+            return i;
+        });
+        
+        arr = _.sortBy(this.arr, function(){
+            return Math.random();
+        });
+        
+        return arr;
+    },
+    initialize: function(){
+    }
 });
 
+module.exports = MatchModel;
 
-},{"backbone":6}],4:[function(require,module,exports){
+},{"backbone":6,"underscore":51}],4:[function(require,module,exports){
 var templater = require("handlebars/runtime")["default"].template;module.exports = templater({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var helper;
 
-  return "adsfasdfasdfa "
-    + container.escapeExpression(((helper = (helper = helpers.algo || (depth0 != null ? depth0.algo : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"algo","hash":{},"data":data}) : helper)));
+  return "\n<div class=\"status-bar\">\n  <h1>PEERQUEST</h1>\n  <span class=\"score\">TOTAL SCORE: <b class=\"score\">+ "
+    + container.escapeExpression(((helper = (helper = helpers.score || (depth0 != null ? depth0.score : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"score","hash":{},"data":data}) : helper)))
+    + "</b></span>\n  <div class=\"user-container\">\n    <div class=\"user-pic\"></div>\n    <span class=\"username\">Miguel</span>\n  </div>\n</div>\n\n\n<div class=\"main-card stat\">\n  <h2 class=\"level-title\">LEVEL 1 <span>MEMMORAMA</span></h2>\n  \n  <div class=\"progress-bar\">\n    <div class=\"progress\"></div>\n  </div>\n  \n  <span class=\"points\">559 of 1000 Points</span>\n  <span class=\"completed\">57% Completed</span>\n</div>\n\n<div class=\"main-card mainboard\">\n  <h3>Instructions</h3>\n  \n  <div class=\"mainboard-header\">\n    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>\n    \n    <a class=\"button restart\" href=\"#\">RESTART</a>\n    <a class=\"button startgame\" href=\"#\">START GAME</a>\n  </div>\n  \n  \n  <div class=\"playground\">\n    <div class=\"timer-container\">\n      <div class=\"timer-icon\"></div>\n      \n      <div class=\"timer\">00:10:12</div>\n      \n    </div>\n    <div class=\"clear\"></div>\n    \n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    \n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    <div class=\"card\"><div class=\"inner-card\"></div></div>\n    \n    \n  </div>\n ";
 },"useData":true});
 },{"handlebars/runtime":49}],5:[function(require,module,exports){
 
 var BB = require('backbone');
 var hb = require('handlebars');
 var $ = require('jquery');
+
+var MatchModel = require('./model');
     
 var MatchView = BB.View.extend({
     template: require('./template.handlebars'),
     id: 'matchView',
     events: {},
-    model: require('./model'),
+    model: new MatchModel(),
     initialize: function(){
         this.listenTo(this.model, 'change', this.render);
         this.render();

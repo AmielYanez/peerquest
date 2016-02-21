@@ -1,1 +1,52 @@
-adsfasdfasdfa {{algo}}
+
+<div class="status-bar">
+  <h1>PEERQUEST</h1>
+  <span class="score">TOTAL SCORE: <b class="score">+ {{score}}</b></span>
+  <div class="user-container">
+    <div class="user-pic"></div>
+    <span class="username">Miguel</span>
+  </div>
+</div>
+
+
+<div class="main-card stat">
+  <h2 class="level-title">LEVEL 1 <span>MEMMORAMA</span></h2>
+  
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+  
+  <span class="points">559 of 1000 Points</span>
+  <span class="completed">57% Completed</span>
+</div>
+
+<div class="main-card mainboard">
+  <h3>Instructions</h3>
+  
+  <div class="mainboard-header">
+    <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+    
+    <a class="button restart" href="#">RESTART</a>
+    <a class="button startgame" href="#">START GAME</a>
+  </div>
+  
+  
+  <div class="playground">
+    <div class="timer-container">
+      <div class="timer-icon"></div>
+      
+      <div class="timer">00:10:12</div>
+      
+    </div>
+    <div class="clear"></div>
+    {{#each people}}
+        <div class="card"><div class="inner-card">{{[0]}}</div></div>
+    {{/each}}
+    
+    {{#each random()}}
+        <div class="card"><div class="inner-card">{{people[1]}}</div></div>
+    {{/each}}
+    
+    
+  </div>
+ 

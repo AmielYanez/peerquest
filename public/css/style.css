@@ -1,0 +1,391 @@
+@font-face {
+    font-family: 'opensans';
+    src: url('/media/fonts/opensans/light/OpenSans-Light-webfont.eot');
+    src: url('/media/fonts/opensans/light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/media/fonts/opensans/light/OpenSans-Light-webfont.woff') format('woff'),
+         url('/media/fonts/opensans/light/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('/media/fonts/opensans/light/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opensans';
+    src: url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.eot');
+    src: url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.woff') format('woff'),
+         url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opensans';
+    src: url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.eot');
+    src: url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'opensans';
+    src: url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.eot');
+    src: url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.woff') format('woff'),
+         url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 400;
+    font-style: bold;
+}
+
+
+body,
+html {
+  background: #f2f6f7;
+  margin: 0;
+  font-family: opensans;
+  font-weight: 200;
+}
+
+body {
+  padding-bottom: 30px;
+}
+
+.main-container {
+  width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  margin-top: 30px;
+  padding: 30px;
+  box-sizing: border-box;
+/*   border: 2px solid #efefef; */
+  border-radius: 4px;
+}
+
+
+/* STATUS BAR */
+
+.status-bar {
+  padding: 0 calc(50% - 500px);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  background: #21c393;
+  overflow: hidden;
+}
+
+.status-bar h1 {
+  color: #FFF;
+  margin: 0;
+  margin-left: 10px;
+  font-weight: 300;
+  display: inline-block;
+  font-size: 24px;
+}
+
+.status-bar .score {
+  color: #FFF;
+  display: inline-block;
+  margin-left: 30px;
+  font-weight: 300;
+}
+
+.status-bar .score b {
+  color: #bc7f1c;
+  font-weight: 400;
+  background: #fecc2f;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 6px;
+  border: 3px solid #fee133;
+  margin-left: 10px;
+}
+
+.status-bar .user-container {
+  float: right;
+}
+
+.status-bar .username {
+  display: inline-block;
+  color: #FFF;
+  font-weight: 300;
+  line-height: 20px;
+  position: relative;
+  top: -10px;
+  margin-right: 25px;
+}
+
+.status-bar .username:after {
+  content: '';
+  width: 12px;
+  height: 5px;
+  background: url(/media/img/drop.png) no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 8px;
+  right: -20px;
+}
+
+.status-bar .user-pic {
+  width: 40px;
+  height: 40px;
+  background: #FFF;
+  border-radius: 100px;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+
+
+/* GAME STATUS */
+
+.main-card {
+  width: 1000px;
+  margin: 0 auto;
+  background: #ffffff;
+  margin-top: 30px;
+  padding: 30px;
+  box-sizing: border-box;
+  border: 3px solid #f8f9f9;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.level-title {
+  color: #21c393;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+  margin-left: 50px;
+  position: relative;
+}
+
+.level-title span {
+  color: #676767;
+  font-size: 20px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.stat .level-title:before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background: url(/media/img/star.png) no-repeat center center;
+  background-size: cover;
+  left: -50px;
+  top: -5px;
+}
+
+.stat .progress-bar {
+  width: 100%;
+  height: 30px;
+  background: #f3f3f3;
+  margin-top: 20px;
+  border-radius: 100px;
+/*   border: 3px solid #edecec; */
+  position: relative;
+  overflow: hidden;
+}
+
+.stat .progress-bar .progress {
+  width: 35%;
+  height: 26px;
+  background: #24c7f2;
+  position: absolute;
+
+  border-top: 2px solid #24a8d8;
+  border-top-left-radius: 15px;
+  border-bottom: 2px solid #26ddfd;
+  border-bottom-left-radius: 15px;
+  border-right: 2px solid #23cbfc;
+}
+
+.stat .points {
+  color: #b9b9b9;
+  float: left;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-weight: 300;
+}
+
+.stat .completed {
+  color: #b9b9b9;
+  float: right;
+  font-size: 12px;
+  margin-top: 5px;
+  margin-right: 10px;
+  font-weight: 300;
+}
+
+
+
+/* MAIN BOARD */
+
+.mainboard h3 {
+  margin: 0;
+  color: #06c492;
+  font-weight: 300;
+}
+
+.mainboard-header {
+  overflow: hidden;
+}
+
+.mainboard-header p {
+  float: left;
+  width: 60%;
+  font-size: 13px;
+  color: #8a8a8a;
+  margin-right: 20px;
+}
+
+
+.mainboard-header .button {
+  float: left;
+  color: #FFF;
+  border-radius: 4px;
+  font-weight: 300;
+  font-size: 14px;
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+
+.mainboard-header .startgame {
+  float: right;
+  background: #40da19;
+  border: 3px solid #37d00d;
+  width: 110px;
+  margin-right: 20px;
+}
+
+.mainboard-header .restart {
+  float: right;
+  background: #d5d5d5;
+  border: 3px solid #c8c8c8;
+  width: 110px;
+}
+
+
+
+/* PLAYGROUND */
+
+.playground {
+  background: #f2f6f7;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card {
+  width: calc(25% - 30px);
+  float: left;
+  height: 240px;
+  background: #19e4af;
+  margin: 15px 15px 15px 15px;
+  border-radius: 4px;
+  border-bottom: 4px solid #11c697;
+  transition: all .3s;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  background: #0fbd8f;
+  transition: all .3s;
+  cursor: pointer;
+  border-bottom: 4px solid #11a981;
+}
+
+.timer-container {
+  float: right;
+  overflow: hidden;
+  padding-right: 15px;
+  margin-bottom: 15px;
+}
+
+.timer-container .timer {
+  background: #d4dcde;
+  color: #7e8485;
+  border: 3px solid #e0e7e9;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 5px 15px;
+  border-radius: 4px;
+  float: right;
+  margin-right: 15px;
+}
+
+.timer-icon {
+  width: 28px;
+  height: 33px;
+  float: right;
+  background: url(/media/img/timer-icon.png) no-repeat center center;
+  background-size: cover;
+}
+
+.clear {
+  clear: both;
+}
+
+
+.inner-card {
+  border: 2px solid #FFF;
+  width: calc(100% - 4px);
+  height: 196px;
+  border-radius: 4px;
+  background: #37f1c0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
