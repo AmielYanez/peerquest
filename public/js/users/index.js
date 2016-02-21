@@ -4,11 +4,6 @@
 /**
  * Created by ayanez on 2/21/16.
  */
-/*global $ */
-/*jshint unused:false */
-var Users = Users|| {};
-
-(function () {
-    'use strict';
-
-})();
+var $ = require('jquery');
+var UsersView = require('./view');
+var view = new UsersView({el: $('#UsersView')});
