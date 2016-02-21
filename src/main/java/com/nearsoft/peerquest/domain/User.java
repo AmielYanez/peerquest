@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
 import java.util.Date;
 
 @Entity
@@ -53,6 +54,13 @@ public class User {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    @PrePersist
+    private void preSave() {
+        if (creationDate == null) {
+             creationDate = new Date();
+        }
     }
 
 }
