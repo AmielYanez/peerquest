@@ -1,8 +1,14 @@
 
-var $ = require('jquery');
-var _ = require('underscore');
-var BB = require('backbone');
+var App = {};
 
-$(document).on('ready', function(){
-    require('./match');
+App.MatchView = BB.View.extend({
+    id: 'matchView',
+    events: {},
+    initialize: function(){
+        this.listenTo(this.model, change, this.render);
+        
+    },
+    render: function(){}
+    
 });
+    
