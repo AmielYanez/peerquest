@@ -25,14 +25,16 @@
             fail:0
         };
 
+        $scope.started = false;
         $scope.max_time = 160;
-
         $scope.cards = {
             "Leonardo Carrasco":"/img/3",
             "Christian Bojorquez":"/img/26",
             "Christian Ruink":"/img/27",
             "Sandra Vázquez":"/img/20"
         };
+
+
 
         // Load cards
         service.loadCards = function(level){
@@ -41,23 +43,66 @@
             return result;
         }
 
-        function onStart(){
 
-        }
 
-        function onRestart(){
-
-        }
-
-        $scope.start_game = function(){
+        $scope.startMatch = function(){
+            $scope.started = true;
             console.log('Start');
         };
-        $scope.restart_game = function(){
+        $scope.restartMatch = function(){
+            $scope.started = false;
             console.log('Re-Start');
         };
 
+        // Logic
+        var cards_playing = []; // only 2
+        $scope.selectCard = function($event){
+            var $card = $($event.currentTarget);
+            var selected = $card.data('selected');
+            if(selected){
+                // Can not be played due to this was already selected
+                return ;
+            }
 
-        $scope.cards = service.loadCards($scope.level);
+            if(cards_playing.length == 2){
+                flushCardsPlaying();
+            }
+
+            faceUpCard($card);
+            cards_playing.push($card);
+
+            compareCards();
+
+        }
+
+        function faceUpCard($card){
+            $card.removeClass('facedown');
+            $card.data('selected',true);
+        }
+        function faceDownCard($card){
+            $card.addClass('facedown');
+            $card.data('selected',false);
+        }
+
+        function flushCardsPlaying(){
+            _.each(cards_playing,faceDownCard);
+            cards_playing = [];
+        }
+
+        function compareCards(){
+            if(cards_playing.length<2) return;
+            if(cards_playing[0].data('key') ==cards_playing[1].data('key') ){
+                $scope.attempts.success++;
+                cards_playing = []; // reset counter
+            }else{
+                $scope.attempts.fail++;
+                setTimeout(flushCardsPlaying,400);
+            }
+
+        }
+
+        //$scope.cards = service.loadCards($scope.level);
+
     }
 
 })(angular);
