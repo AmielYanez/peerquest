@@ -11,9 +11,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
+import java.util.Random;
+import java.util.Set;
 
 @RestController
 public class MatchController {
@@ -40,7 +45,11 @@ public class MatchController {
         // Check the level of the player / user
         // Get a random pick of people, n times the level of the user
         List<User> users = userRepository.findAll();
-        for (User u : users) {
+        Set<User> randomUsers = new HashSet<>();
+        while (randomUsers.size() < 4) {
+            randomUsers.add(this.getRandomUser(users));
+        }
+        for (User u : randomUsers) {
             pics.put(u.getName(), "/img/" + u.getId().toString());
         }
         // Remove people the user already knows, fill blanks with a 2nd, new random pick
@@ -59,6 +68,13 @@ public class MatchController {
         }
         // Remove people the user already knows, fill blanks with a 2nd, new random pick
         return pics;
+    }
+
+    private User getRandomUser(List<User> users) {
+        Random rn = new Random();
+        int n = users.size();
+        int i = Math.abs(rn.nextInt() % n);
+        return users.get(i);
     }
 
 

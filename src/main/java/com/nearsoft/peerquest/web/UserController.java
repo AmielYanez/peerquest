@@ -17,7 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -78,6 +80,51 @@ public class UserController {
             user = userRepository.save(user);
         }
         return user;
+    }
+
+    @RequestMapping(value = "/seed", method = RequestMethod.GET)
+    void seedUsers() {
+        if (userRepository.count() == 0) {
+            Map<String, String> seeds = new HashMap<String, String>();
+            seeds.put("Hernando Contreras", "ejemplo1@peerquest.com");
+            seeds.put("Rafael Manrique", "chucata@peerquest.com");
+            seeds.put("César Darío García", "monocromatico@peerquest.com");
+            seeds.put("Leonardo Carrasco", "mushasho@peerquest.com");
+            seeds.put("Jorge Chávez", "congal@peerquest.com");
+            seeds.put("Luis Calderón", "azucaramargo@peerquest.com");
+            seeds.put("Erick Grado", "yolo@peerquest.com");
+            seeds.put("Gerardo Baeza", "equis@peerquest.com");
+            seeds.put("Iris Hernandez", "deadpool@peerquest.com");
+            seeds.put("Sandra Vázquez", "arribasonora@peerquest.com");
+            seeds.put("Arturo Ruiz", "comonearsoftninguno@peerquest.com");
+            seeds.put("Mónica Tye", "teambuildingwoo@peerquest.com");
+            seeds.put("Alejandra Landavazo", "palabras@peerquest.com");
+            seeds.put("Tomas Ibarra", "random@peerquest.com");
+            seeds.put("Elsa Balderrama", "enlavida@peerquest.com");
+            seeds.put("Amiel Yanez", "sintemor@peerquest.com");
+            seeds.put("Jorge Salido", "lookatme@peerquest.com");
+            seeds.put("Hector Benitez", "donlookatme@peerquest.com");
+            seeds.put("Miguel Medina", "ytuque@peerquest.com");
+            seeds.put("Axel Valdez", "tecreesmucho@peerquest.com");
+            seeds.put("Eduardo Figarola", "tumbateelrollo@peerquest.com");
+            seeds.put("Christian Ruink", "chacalososteam@peerquest.com");
+            seeds.put("Alvaro Delgado", "cancun@peerquest.com");
+            seeds.put("Julio Gutierrez", "elnoanoa@peerquest.com");
+            seeds.put("Edgar Hernandez", "carmelitasalinas@peerquest.com");
+            seeds.put("Cristian Cota", "epn@peerquest.com");
+            seeds.put("Christian Bojorquez", "nuevo@peerquest.com");
+            seeds.put("Dora Cortazar", "elpeor@peerquest.com");
+            seeds.put("Franciso Hernandez", "elmejor@peerquest.com");
+            seeds.forEach((k,v) -> addUser(k, v));
+        }
+
+    }
+
+    private void addUser(String name, String email) {
+        User u = new User();
+        u.setName(name);
+        u.setEmail(email);
+        userRepository.save(u);
     }
 
 
