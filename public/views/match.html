@@ -1,0 +1,93 @@
+<div ng-controller="MatchesController">
+    <!--Progress of match-->
+    <div class="main-card stat">
+        <h2 class="level-title">LEVEL {{level}} <span>MEMMORAMA</span></h2>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <span class="points">{{points}} of {{max_points}} Points</span>
+        <span class="completed">{{percentage}}% Completed</span>
+    </div>
+    <!--End Progress of match-->
+
+    <div class="main-card mainboard">
+        <h3>Instructions</h3>
+
+        <div class="mainboard-header">
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+            <a class="button restart" href="#" ng-click="restart_game()">RESTART</a>
+            <a class="button startgame" href="#" ng-click="start_game()">START GAME</a>
+        </div>
+
+
+        <div class="playground">
+
+            <div class="match-stats">
+                <span class="correct-stat">{{attempts.success}}/{{attempts.max}}</span>
+                <span class="incorrect-stat">{{attempts.fail}}</span>
+            </div>
+
+
+            <div class="timer-container">
+                <div class="timer-icon"></div>
+                <div class="timer">00:10:12</div>
+
+            </div>
+            <div class="clear"></div>
+
+            <div class="card facedown"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+            <div class="card name-card"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+            <div class="card image-card"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+            <div class="card"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+            <div class="card"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+            <div class="card"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+            <div class="card"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+            <div class="card"><div class="inner-card">
+                <div class="image"><img src="img/user.jpg" /></div>
+                <div class="name">Jonh Doe</div>
+                <div class="cardlogo"></div>
+            </div></div>
+
+
+        </div>
+
+    </div>
+</div>

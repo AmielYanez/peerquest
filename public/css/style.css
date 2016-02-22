@@ -1,43 +1,43 @@
 @font-face {
     font-family: 'opensans';
-    src: url('/media/fonts/opensans/light/OpenSans-Light-webfont.eot');
-    src: url('/media/fonts/opensans/light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/media/fonts/opensans/light/OpenSans-Light-webfont.woff') format('woff'),
-         url('/media/fonts/opensans/light/OpenSans-Light-webfont.ttf') format('truetype'),
-         url('/media/fonts/opensans/light/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    src: url('../fonts/opensans/light/OpenSans-Light-webfont.eot');
+    src: url('../fonts/opensans/light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans/light/OpenSans-Light-webfont.woff') format('woff'),
+         url('../fonts/opensans/light/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('../fonts/opensans/light/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
     font-weight: 100;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'opensans';
-    src: url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.eot');
-    src: url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.woff') format('woff'),
-         url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.ttf') format('truetype'),
-         url('/media/fonts/opensans/regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    src: url('../fonts/opensans/regular/OpenSans-Regular-webfont.eot');
+    src: url('../fonts/opensans/regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans/regular/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../fonts/opensans/regular/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/opensans/regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'opensans';
-    src: url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.eot');
-    src: url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.woff') format('woff'),
-         url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.ttf') format('truetype'),
-         url('/media/fonts/opensans/semibold/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    src: url('../fonts/opensans/semibold/OpenSans-Semibold-webfont.eot');
+    src: url('../fonts/opensans/semibold/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans/semibold/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('../fonts/opensans/semibold/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans/semibold/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'opensans';
-    src: url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.eot');
-    src: url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.woff') format('woff'),
-         url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.ttf') format('truetype'),
-         url('/media/fonts/opensans/bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    src: url('../fonts/opensans/bold/OpenSans-Bold-webfont.eot');
+    src: url('../fonts/opensans/bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/opensans/bold/OpenSans-Bold-webfont.woff') format('woff'),
+         url('../fonts/opensans/bold/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('../fonts/opensans/bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
     font-weight: 400;
     font-style: bold;
 }
@@ -122,7 +122,7 @@ body {
   content: '';
   width: 12px;
   height: 5px;
-  background: url(/media/img/drop.png) no-repeat center center;
+  background: url(../img/drop.png) no-repeat center center;
   background-size: cover;
   position: absolute;
   top: 8px;
@@ -175,7 +175,7 @@ body {
   width: 40px;
   height: 40px;
   position: absolute;
-  background: url(/media/img/star.png) no-repeat center center;
+  background: url(../img/star.png) no-repeat center center;
   background-size: cover;
   left: -50px;
   top: -5px;
@@ -280,7 +280,7 @@ body {
 /* PLAYGROUND */
 
 .playground {
-  background: #f2f6f7;
+  background: #f8f8f8;
   padding: 20px;
   margin-top: 20px;
   border-radius: 4px;
@@ -290,21 +290,23 @@ body {
 .card {
   width: calc(25% - 30px);
   float: left;
-  height: 240px;
-  background: #19e4af;
+  height: 250px;
+  background: #FFF;
   margin: 15px 15px 15px 15px;
   border-radius: 4px;
-  border-bottom: 4px solid #11c697;
+  border: 4px solid #f3f7f8;
+  border-bottom: 4px solid #d9d9d9;
   transition: all .3s;
   padding: 20px;
   box-sizing: border-box;
+  
 }
 
 .card:hover {
-  background: #0fbd8f;
   transition: all .3s;
   cursor: pointer;
-  border-bottom: 4px solid #11a981;
+  position: relative;
+  top: -3px;
 }
 
 .timer-container {
@@ -330,7 +332,7 @@ body {
   width: 28px;
   height: 33px;
   float: right;
-  background: url(/media/img/timer-icon.png) no-repeat center center;
+  background: url(../img/timer-icon.png) no-repeat center center;
   background-size: cover;
 }
 
@@ -341,17 +343,185 @@ body {
 
 .inner-card {
   border: 2px solid #FFF;
-  width: calc(100% - 4px);
+  width: calc(100% - 4px;);
   height: 196px;
   border-radius: 4px;
-  background: #37f1c0;
+  background: #07c6f3;
+  border: 4px solid #06b9e2;
+  position: relative;
 }
 
+.inner-card:before {
+  width: 30px;
+  height: 30px;
+  background-color: #FFF;
+  border-radius: 4px;
+  content: '';
+  background-image: url(../img/card-star.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center center;
+  left: -10px;
+  top: -10px;
+}
 
+.inner-card:after {
+  width: 30px;
+  height: 30px;
+  background-color: #FFF;
+  border-radius: 4px;
+  content: '';
+  background-image: url(../img/card-star.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center center;
+  right: -10px;
+  bottom: -10px;
+}
 
+.inner-card .image {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 25px;
+  background: black;
+  border: 4px solid #FFF;
+  border-radius: 100px;
+  overflow: hidden;
+}
 
+.inner-card .image img {
+  width: 100%;
+  height: auto;
+}
 
+.inner-card .name {
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+  color: #FFF;
+  margin-top: 5px;
+  font-weight: 400;
+  text-decoration: underline;
+}
 
+.inner-card .cardlogo {
+  position: absolute;
+  background: url(../img/small-logo.png) no-repeat center center;
+  background-size: cover;
+  width: 65px;
+  height: 12px;
+  bottom: 4px;
+  left: 4px;
+}
+
+.facedown .inner-card:before {
+  width: 30px;
+  height: 30px;
+  background-color: #FFF;
+  border-radius: 4px;
+  content: '';
+  background-image: url(../img/card-star-gray.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center center;
+  left: -10px;
+  top: -10px;
+}
+
+.facedown .inner-card:after {
+  width: 30px;
+  height: 30px;
+  background-color: #FFF;
+  border-radius: 4px;
+  content: '';
+  background-image: url(../img/card-star-gray.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  background-position: center center;
+  right: -10px;
+  bottom: -10px;
+}
+
+.facedown .inner-card {
+  border: 4px solid #d8e2e3;
+  background: #FFF;
+  background-image: url(../img/card-back.png);
+  background-repeat: no-repeat;
+  background-position: 10px center;
+}
+
+.facedown .inner-card .cardlogo,
+.facedown .inner-card .image,
+.facedown .inner-card .name {
+  display: none;
+}
+
+.name-card .image {
+  display: none;
+}
+
+.name-card .inner-card {
+  background-image: url(../img/smiley.png);
+  background-repeat: no-repeat;
+  background-position: center 70px;
+}
+
+.name-card .name {
+  margin-top: 110px;
+}
+
+.image-card .name {
+  display: none;
+}
+
+.image-card .image {
+  margin-top: 40px;
+}
+
+.match-stats {
+  float: left;
+  font-weight: 400;
+  margin-left: 25px;
+  margin-top: 12px;
+}
+
+.correct-stat {
+  color: #05c491;
+  position: relative;
+  padding-left: 32px;
+  display: inline-block;
+}
+
+.correct-stat:before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background: url(../img/correct-icon.png) no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  left: 0px;
+  top: -2px;
+}
+
+.incorrect-stat {
+  color: #ec5051;
+  display: inline-block;
+  position: relative;
+  padding-left: 32px;
+  margin-left: 20px;
+}
+
+.incorrect-stat:before {
+  content: '';
+  width: 25px;
+  height: 25px;
+  background: url(../img/incorrect-icon.png) no-repeat center center;
+  background-size: contain;
+  position: absolute;
+  left: 0;
+  top: -2px;
+}
 
 
 
