@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="PeerQuest">
+<head>
+  <title>PeerQuest</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link src="./node_modules/angular-motion/dist/angular-motion.css">
+</head>
+
+<body>
+
+
+<!--Header-->
+<div class="status-bar">
+  <h1>PEERQUEST</h1>
+  <span class="score">TOTAL SCORE: <b class="score">+ 200</b></span>
+  <div class="user-container">
+    <div class="user-pic"></div>
+    <span class="username">Miguel</span>
+  </div>
+</div>
+<!--End Header-->
+
+<!-- CONTENT -->
+<div ui-view></div>
+<!-- END CONTENT-->
+
+
+<script src="node_modules/angular/angular.min.js"></script>
+<script src="node_modules/angular-animate/angular-animate.min.js"></script>
+<script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+<script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/underscore/underscore-min.js"></script>
+
+
+<script src="js/app.js"></script>
+<script src="js/app.bootstrap.js"></script>
+<script src="js/app.routes.js"></script>
+<script src="js/services/Api.js"></script>
+<script src="js/controllers/Matches.js"></script>
+
+
+</body>
+</html>
