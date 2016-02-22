@@ -18,8 +18,8 @@
         <div class="mainboard-header">
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-            <a class="button restart" href="javascript:void(0);" ng-click="restart_game()" ng-show="started">RESTART</a>
-            <a class="button startgame" href="javascript:void(0);" ng-click="start_game()" ng-show="!started">START GAME</a>
+            <a class="button restart" href="javascript:void(0);" ng-click="restartMatch()" ng-show="started">RESTART</a>
+            <a class="button startgame" href="javascript:void(0);" ng-click="startMatch()" ng-show="!started">START GAME</a>
         </div>
 
 
@@ -33,7 +33,7 @@
 
             <div class="timer-container">
                 <div class="timer-icon"></div>
-                <div class="timer">00:10:12</div>
+                <div class="timer">{{timer.display}}</div>
 
             </div>
             <div class="clear"></div>

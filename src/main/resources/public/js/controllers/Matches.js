@@ -24,15 +24,22 @@
             success:0,
             fail:0
         };
+        $scope.timer = {
+            display:'00:00:00',
+            started: 0,
+            intervalId:null
+
+        };
 
         $scope.started = false;
-        $scope.max_time = 160;
+        $scope.max_time = 60;
         $scope.cards = {
             "Leonardo Carrasco":"/img/3",
             "Christian Bojorquez":"/img/26",
             "Christian Ruink":"/img/27",
             "Sandra Vázquez":"/img/20"
         };
+
 
 
 
@@ -46,17 +53,26 @@
 
 
         $scope.startMatch = function(){
+            resetCards();
             $scope.started = true;
             console.log('Start');
+            startTimer();
         };
         $scope.restartMatch = function(){
             $scope.started = false;
+            resetCards();
+            $scope.attempts.success =0;
+            $scope.attempts.fail =0;
             console.log('Re-Start');
         };
 
         // Logic
         var cards_playing = []; // only 2
         $scope.selectCard = function($event){
+            if(!$scope.started){
+                alert("You must start the game first!");
+                return;
+            }
             var $card = $($event.currentTarget);
             var selected = $card.data('selected');
             if(selected){
@@ -72,6 +88,13 @@
             cards_playing.push($card);
 
             compareCards();
+
+        }
+
+        function resetCards(){
+            cards_playing = _.map($('.card'),function(card){return $(card);});
+            flushCardsPlaying();
+            stopMatch();
 
         }
 
@@ -99,6 +122,48 @@
                 setTimeout(flushCardsPlaying,400);
             }
 
+        }
+
+        function stopMatch(){
+            clearInterval($scope.timer.intervalId);
+            $scope.timer.display = '00:00:00';
+            $scope.timer.started= 0;
+            $scope.started = false;
+        }
+
+        // TImer functions
+
+        function startTimer(){
+            var now=new Date();
+            var timer = now.getTime() + ($scope.max_time * 1000); // Offset by one day;
+            now.setTime( timer );
+            $scope.timer.started = now;
+            $scope.timer.intervalId = setInterval(getTimeRemaining ,1000);
+
+        }
+
+        function getTimeRemaining(){
+            var t = $scope.timer.started.getTime() - Date.parse(new Date());
+            console.log(t+": "+ (t/1000));
+            var seconds = Math.floor( (t/1000) % 60 );
+            var minutes = Math.floor( (t/1000/60) % 60 );
+            var hours = Math.floor( (t/(1000*60*60)) % 24 );
+            var days = Math.floor( t/(1000*60*60*24) );
+
+            $scope.timer.display = hours+':'+minutes+':'+seconds;
+            console.log($scope.timer.display);
+            if(t <= 0){
+                stopMatch();
+                alert("Match finished");
+            }
+
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
         }
 
         //$scope.cards = service.loadCards($scope.level);
