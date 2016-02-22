@@ -40,14 +40,14 @@
 
             <div ng-repeat="(name, image) in cards" class="card facedown name-card" ng-click="selectCard($event)" data-key="{{name}}">
                 <div class="inner-card">
-                    <div class="image"><img src="img/user.jpg" /></div>
+                    <div class="image"><img src="{{image}}.jpg" /></div>
                     <div class="name">{{name}}</div>
                     <div class="cardlogo"></div>
                 </div>
             </div>
             <div ng-repeat="(name, image) in cards" class="card facedown image-card" ng-click="selectCard($event)" data-key="{{name}}">
                 <div class="inner-card">
-                    <div class="image"><img src="img/user.jpg" /></div>
+                    <div class="image"><img src="{{image}}.jpg" /></div>
                     <div class="name">{{name}}</div>
                     <div class="cardlogo"></div>
                 </div>
