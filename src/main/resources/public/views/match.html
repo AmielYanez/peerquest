@@ -4,7 +4,7 @@
         <h2 class="level-title">LEVEL {{level}} <span>MEMMORAMA</span></h2>
 
         <div class="progress-bar">
-            <div class="progress"></div>
+            <div class="progress" style="width: {{percentage}}%"></div>
         </div>
 
         <span class="points">{{points}} of {{max_points}} Points</span>
@@ -18,8 +18,8 @@
         <div class="mainboard-header">
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
 
-            <a class="button restart" href="#" ng-click="restart_game()">RESTART</a>
-            <a class="button startgame" href="#" ng-click="start_game()">START GAME</a>
+            <a class="button restart" href="javascript:void(0);" ng-click="restart_game()" ng-show="started">RESTART</a>
+            <a class="button startgame" href="javascript:void(0);" ng-click="start_game()" ng-show="!started">START GAME</a>
         </div>
 
 
@@ -38,53 +38,62 @@
             </div>
             <div class="clear"></div>
 
-            <div class="card facedown"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <div ng-repeat="(name, image) in cards" class="card facedown name-card" ng-click="selectCard($event)" data-key="{{name}}">
+                <div class="inner-card">
+                    <div class="image"><img src="img/user.jpg" /></div>
+                    <div class="name">{{name}}</div>
+                    <div class="cardlogo"></div>
+                </div>
+            </div>
+            <div ng-repeat="(name, image) in cards" class="card facedown image-card" ng-click="selectCard($event)" data-key="{{name}}">
+                <div class="inner-card">
+                    <div class="image"><img src="img/user.jpg" /></div>
+                    <div class="name">{{name}}</div>
+                    <div class="cardlogo"></div>
+                </div>
+            </div>
 
-            <div class="card name-card"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <!--<div class="card name-card"><div class="inner-card">-->
+                <!--<div class="image"><img src="img/user.jpg" /></div>-->
+                <!--<div class="name">Jonh Doe</div>-->
+                <!--<div class="cardlogo"></div>-->
+            <!--</div></div>-->
 
-            <div class="card image-card"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <!--<div class="card image-card"><div class="inner-card">-->
+                <!--<div class="image"><img src="img/user.jpg" /></div>-->
+                <!--<div class="name">Jonh Doe</div>-->
+                <!--<div class="cardlogo"></div>-->
+            <!--</div></div>-->
 
-            <div class="card"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <!--<div class="card"><div class="inner-card">-->
+                <!--<div class="image"><img src="img/user.jpg" /></div>-->
+                <!--<div class="name">Jonh Doe</div>-->
+                <!--<div class="cardlogo"></div>-->
+            <!--</div></div>-->
 
-            <div class="card"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <!--<div class="card"><div class="inner-card">-->
+                <!--<div class="image"><img src="img/user.jpg" /></div>-->
+                <!--<div class="name">Jonh Doe</div>-->
+                <!--<div class="cardlogo"></div>-->
+            <!--</div></div>-->
 
-            <div class="card"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <!--<div class="card"><div class="inner-card">-->
+                <!--<div class="image"><img src="img/user.jpg" /></div>-->
+                <!--<div class="name">Jonh Doe</div>-->
+                <!--<div class="cardlogo"></div>-->
+            <!--</div></div>-->
 
-            <div class="card"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <!--<div class="card"><div class="inner-card">-->
+                <!--<div class="image"><img src="img/user.jpg" /></div>-->
+                <!--<div class="name">Jonh Doe</div>-->
+                <!--<div class="cardlogo"></div>-->
+            <!--</div></div>-->
 
-            <div class="card"><div class="inner-card">
-                <div class="image"><img src="img/user.jpg" /></div>
-                <div class="name">Jonh Doe</div>
-                <div class="cardlogo"></div>
-            </div></div>
+            <!--<div class="card"><div class="inner-card">-->
+                <!--<div class="image"><img src="img/user.jpg" /></div>-->
+                <!--<div class="name">Jonh Doe</div>-->
+                <!--<div class="cardlogo"></div>-->
+            <!--</div></div>-->
 
 
         </div>
