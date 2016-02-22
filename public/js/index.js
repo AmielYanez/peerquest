@@ -1,14 +1,11 @@
 
-var App = {};
+var $ = require('jquery');
 
-App.MatchView = BB.View.extend({
-    id: 'matchView',
-    events: {},
-    initialize: function(){
-        this.listenTo(this.model, change, this.render);
-        
-    },
-    render: function(){}
+require('./util');
+
+$(document).on('ready', function(){
+    
+    require('./match');
     
 });
-    
+
