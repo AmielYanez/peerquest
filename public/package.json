@@ -1,20 +1,17 @@
 {
-  "name": "public",
+  "name": "PeerQuest",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "dependencies": {
-    "backbone": "^1.2.3",
-    "browserify-handlebars": "^1.0.0",
-    "handlebars": "^4.0.5",
+    "angular": "~1.4.8",
+    "angular-cookies": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
     "jquery": "^2.2.0",
-    "underscore": "^1.8.3"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "underscore": "^1.8.3",
+    "angular-motion": "~0.4.3",
+    "angular-animate": "~1.4.8"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Nearsoft Labs"
 }
